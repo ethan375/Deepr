@@ -1,0 +1,23 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "## **User story** 1. When the user loads the home page they will be able to login or sign up. 2. After the user logs in they will be able to see the topics they have permissions to 3. The user will enter their appropriate conversation topic and make new posts 4. Post will be able to be up and down voted by users 5. When a post by a user reaches a preset milestone of upvotes they will have access to the 'higher' aspects of the conversation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethan375/Project-2.git"
+  },
+  "author": "Ethan Ebel & Jackson McGrath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethan375/Project-2/issues"
+  },
+  "homepage": "https://github.com/ethan375/Project-2#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}
