@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 
 
-const homeController = require('./controllers/home');
+const homeController = require('./controllers/home.js');
 app.use('/home', homeController);
 
 

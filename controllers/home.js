@@ -8,4 +8,21 @@ router.get('/', (req,res)=>{
 });
 
 
+router.get('/register', (req,res)=>{
+  // res.render('register.ejs')
+});
+
+router.post('register', (req,res)=>{
+
+})
+
+router.post('/', (req,res)=>{
+
+});
+
+router.get('/about', (req,res)=>{
+  // res.send('working')
+  res.render('about.ejs')
+})
+
 module.exports = router;
