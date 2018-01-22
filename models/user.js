@@ -8,7 +8,9 @@ const userSchema = new mongoose.Schema({
 	},
 	password: String,
 	upvotes: Number,
+	
+});
 
-})
+const User = mongoose.model('User', userSchema);
 
-module.exports = require()
+module.exports = User;
