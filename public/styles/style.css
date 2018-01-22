@@ -1,0 +1,66 @@
+body {
+	background-color: lavender;
+}
+
+/*.container {
+	width: 960px;
+	margin: 0 auto;
+}*/
+
+.top-banner {
+	margin: 0 auto;
+	text-align: center;
+	background-color: white;
+	height: 120px;
+	width: 100%;
+}
+
+#logo-container {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.login-pannel {
+	float: right;
+	display: inline;
+}
+
+.page-nav {
+	display: flex;
+	justify-content: space-around;
+	background-color: white;
+}
+
+.page-link {
+	border: none;
+	background-color: lightgrey;
+	width: 100px;
+}
+
+#logo {
+	text-align: center;
+	margin: -30px;
+}
+
+.post-banner {
+	background-color: white;
+	height: 120px;
+	width: 100%;
+	border: 2px solid grey;
+	margin: 5px 0;
+}
+
+.post-thumbnail {
+	height: 100px;
+	margin: 10px 50px;
+
+}
+
+.post-text {
+	display: inline-block;
+}
+
+.login-pannel {
+	display: inline-block;
+}
+

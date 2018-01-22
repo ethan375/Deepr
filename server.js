@@ -2,25 +2,29 @@ const express = require('express')
 const app = express();
 
 
+
 require('./db/db.js')
 
 
+// MIDDLEWARE
+app.use(express.static('public'));
+
+
+// CONTROLLERS
 const homeController = require('./controllers/home.js');
 app.use('/home', homeController);
 const level2Controller = require('./controllers/level2.js');
 app.use('/level2', level2Controller);
 
 
-app.get('', (req,res)=>{
+// ROUTES
+app.get('/', (req,res)=>{
   res.redirect('/home')
 });
-
 
 app.get('*', (req,res)=>{
   res.send('404 webpage not found');
 });
-
-
 
 
 

@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const user = require('../models/user.js');
 const Post = require('../models/post.js');
 
-
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
     res.render('home.ejs', {
@@ -33,8 +32,10 @@ router.post('/', (req,res)=>{
       res.redirect('/home')//this is possibly going to be changed 
     }
   });
-});
 
+  res.render('home.ejs');
+
+});
 
 router.get('/register', (req,res)=>{
   console.log(req.session)
