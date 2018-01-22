@@ -20,6 +20,7 @@
     "bcrypt": "^1.0.3",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "express-session": "^1.0.6",
     "express-static": "^1.2.5",
     "gulp": "^3.9.1",
     "gulp-less": "^3.4.0",

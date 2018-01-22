@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express();
+const bodyParser = require('body-parser');
+const session = require('express-session')
 
 
 
@@ -7,8 +9,13 @@ require('./db/db.js')
 
 
 // MIDDLEWARE
+app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'));
-
+app.use(session({
+  secret:'the secret string',
+  resave:false,
+  saveUninitialized:false
+}));
 
 // CONTROLLERS
 const homeController = require('./controllers/home.js');
