@@ -18,6 +18,8 @@
   "homepage": "https://github.com/ethan375/Project-2#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.4.0"
   }
 }
