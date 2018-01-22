@@ -85,6 +85,18 @@ router.post('login', (req,res)=>{
 
 });
 
+
+router.get('/logout', (req,res)=>{
+  req.session.destroy((err)=>{
+    if(err){
+      console.log(err);
+    }else{
+      res.redirect('/home/login');
+    };
+  });
+});
+
+
 //about
 router.get('/about', (req,res)=>{
   res.render('about.ejs')
