@@ -13,16 +13,18 @@ body {
 	background-color: white;
 	height: 120px;
 	width: 100%;
+	display: flex;
 }
 
 #logo-container {
 	width: 300px;
 	margin: 0 auto;
+	float: center;
 }
 
 .login-pannel {
-	float: right;
-	display: inline;
+	width: 100px;
+	margin: 0;
 }
 
 .page-nav {
@@ -35,6 +37,7 @@ body {
 	border: none;
 	background-color: lightgrey;
 	width: 100px;
+	margin: 5px;
 }
 
 #logo {

@@ -4,6 +4,9 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 const Post = require('../models/post.js');
 
+
+// ROUTES
+//home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
     res.render('home.ejs', {
@@ -16,6 +19,7 @@ router.post('/', (req,res)=>{
   res.render('home.ejs');
 });
 
+//register
 router.get('/register', (req,res)=>{
   console.log(req.session)
   res.render('register.ejs')
@@ -32,7 +36,6 @@ router.post('/register', (req,res)=>{
     username: req.body.username,
     password: passwordHash
   }
-  console.log("\n\n\n\nHere is userDatabaseEntry:", userDatabaseEntry);
   User.create(userDatabaseEntry, (err, userCreated)=>{
     // console.log("this code is being run")
     console.log(userCreated, "This is the userCreated");
@@ -44,6 +47,7 @@ router.post('/register', (req,res)=>{
     res.redirect('/home');
   });
 });
+
 
 
 router.get('/login', (req,res)=>{
@@ -72,9 +76,17 @@ router.post('/login', (req,res)=>{
   });
 });
 
+//login
+router.get('/login', (req,res)=>{
+  // res.render('login.ejs')
+});
 
+router.post('login', (req,res)=>{
+
+});
+
+//about
 router.get('/about', (req,res)=>{
-  // res.send('working')
   res.render('about.ejs')
 })
 
