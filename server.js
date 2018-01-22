@@ -2,8 +2,13 @@ const express = require('express')
 const app = express();
 
 
+require('./db/db.js')
+
+
 const homeController = require('./controllers/home.js');
 app.use('/home', homeController);
+const level2Controller = require('./controllers/level2.js');
+app.use('/level2', level2Controller);
 
 
 app.get('', (req,res)=>{
