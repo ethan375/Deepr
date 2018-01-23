@@ -89,6 +89,46 @@ router.post('/', (req , res) => {
   })
 })
 
+//login
+router.get('/login', (req,res)=>{
+  res.render('login.ejs');
+});
+
+router.post('login', (req,res)=>{
+  //1st step is to search the database
+  User.findOne({username:req.body.username}, (err, foundUser)=>{
+    if(foundUser){
+      //here we need to compare password given to pass in the db 
+      //first arg is pass given 2nd is whats in the db
+      if(bcrypt.compareSync(req.body.password, foundUser.password)){
+        req.session.username = req.body.username;
+        req.session.logged = true;
+        req.session.message = '';
+        res.redirect('/home');
+      } else{
+        req.session.message = 'The username or password are incorrect'
+        res.redirect('/home/login');
+      }// end of the nested else 
+    }else{
+      console.log('there was an error', err);
+      req.session.message = 'The username or password are incorrect'
+      res.redirect('/home/login');
+    }//end of the parent route 
+  })//end of the username search 
+});//end of our login post route
+
+
+router.get('/logout', (req,res)=>{
+  req.session.destroy((err)=>{
+    if(err){
+      console.log(err);
+    }else{
+      res.redirect('/home/login');
+    };
+  });
+});
+
+
 //about
 router.get('/about', (req,res)=>{
   res.render('about.ejs')
