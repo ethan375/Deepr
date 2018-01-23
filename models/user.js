@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
 	password: String,
 	upvotes: Number,
 	posts: [Post.schema],
-	comments: [Comment.schema]
+	comments: [Comment]
 });
 
 const User = mongoose.model('User', userSchema);

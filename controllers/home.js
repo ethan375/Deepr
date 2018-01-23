@@ -85,7 +85,7 @@ router.get('/new', (req , res) => {
 })
 
 router.post('/new', (req,res)=>{
-  Post.create(dbEntry, (err, createdPost)=>{
+  Post.create(req.body, (err, createdPost)=>{
     // console.log(err)
     // console.log(req.body)
     // console.log("This is space. above is req.body below createdPost")
