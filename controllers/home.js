@@ -84,8 +84,8 @@ router.get('/new', (req , res) => {
 })
 
 router.post('/', (req , res) => {
-  Post.create(req.body, (err, createdArticle) => {
-    res.redirect('/home')
+  Post.create(req.body, (err, createdPost) => {
+    res.redirect('/home');
   })
 })
 

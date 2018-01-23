@@ -26,25 +26,32 @@ body {
 
 .login-pannel {
 	width: 100px;
-	margin: 0;
+	margin: 20px 0 0 0;
 }
 
 .page-nav {
 	display: flex;
 	justify-content: space-around;
-	background-color: white;
+	/*background-color: white;*/
 }
 
 .page-link {
 	border: none;
-	background-color: lightgrey;
-	width: 100px;
-	margin: 5px;
+	background: url("https://i.imgur.com/bobL4xD.png");
+	background-size: cover;
+	width: 160px;
+	height: 40px;
+	margin: 0;
 }
 
 #logo {
 	text-align: center;
-	margin: -30px;
+	background: url('https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png');
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	border: none;
+	margin: 20px 0 0 0;
 }
 
 .post-banner {
@@ -83,3 +90,4 @@ body {
 	width: 50%;
 	height: 300px;
 }
+
