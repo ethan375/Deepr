@@ -85,18 +85,11 @@ router.get('/new', (req , res) => {
 })
 
 router.post('/new', (req,res)=>{
-  const dbEntry = {
-    title: req.body.title,
-    body: req.body.body,
-    upvotes: null,
-    comments: null
-  }
-  console.log(req.body, ' this is req.body')
   Post.create(dbEntry, (err, createdPost)=>{
-    console.log(err)
+    // console.log(err)
     // console.log(req.body)
-    console.log("This is space. above is req.body below createdPost")
-    console.log(createdPost, ' this is empty')
+    // console.log("This is space. above is req.body below createdPost")
+    // console.log(createdPost, ' this is empty')
     res.redirect('/home')
   })
 })
