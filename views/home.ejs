@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="lib/jquery.upvote.css">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
@@ -31,6 +32,14 @@
 		<main>
 			<% for (let i = 0; i < posts.length; i++) { -%>
 				
+				<div id="topic" class="upvote">
+    			<a class="upvote"></a>
+    			<span class="count">0</span>
+    			<a class="downvote"></a>
+					<a class="star"></a>
+				</div>
+
+
 			<div class="post-banner">
 				<img class="post-thumbnail" src="https://i.stack.imgur.com/Zkpt2.png">
 				<img class="post-thumbnail" src="http://awarenessmysteryvalue.org/wp-content/themes/oria/images/placeholder.png">
