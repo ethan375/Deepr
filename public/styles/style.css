@@ -17,6 +17,8 @@ body {
 }
 
 #logo-container {
+	position: relative;
+	left: 45px;
 	width: 300px;
 	margin: 0 auto;
 	float: center;
@@ -68,3 +70,16 @@ body {
 	display: inline-block;
 }
 
+.new-container {
+	margin: 0 auto;
+	/*text-align: center;*/
+}
+
+.new-inner {
+	margin: 0 auto;
+}
+
+.input-body {
+	width: 50%;
+	height: 300px;
+}

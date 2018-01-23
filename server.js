@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
-const session = require('express-session')
-
+const session = require('express-session');
+const methodOverride = require('method-override');
 
 
 require('./db/db.js')
@@ -16,6 +16,7 @@ app.use(session({
   resave:false,
   saveUninitialized:false
 }));
+app.use(methodOverride('_method'));
 
 // CONTROLLERS
 const homeController = require('./controllers/home.js');

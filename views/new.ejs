@@ -2,15 +2,45 @@
 <html>
 <head>
 	<title>New Post</title>
+	<link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
-	<h1>Create New Post</h1>
-	<form action="/new" method="POST">
-		<label>Title:</label> <br>
-		<input type="text" name="title"> <br>
-		<label>Body:</label> <br>
-		<input type="text" name="body"> <br>
-		<input type="submit" value="Create Post">
-	</form>
+	<header>
+
+			<div class="top-banner">
+				<div id="logo-container">
+					<img id="logo" src="https://www.techonline.com/img/tmp/logo-placeholder.png" href="/home">
+				</div>
+				<div class="login-pannel">
+					<a href="/home/login">Login</a> <br>
+					<a href="/home/register">Register</a> <br>
+					<a href="/home/new">New Post</a>
+				</div>
+			</div>
+			
+			<div class="page-nav">
+				<button class="page-link">Consciousness</button>
+				<button class="page-link">Sailing</button>
+				<button class="page-link">Cars</button>
+				<button class="page-link">Baseball</button>
+			</div>
+	
+	</header>
+
+	<main>
+		<div class="new-container">
+			<div class="new-inner">
+				<h1>Create New Post</h1>
+				<form action="/home" method="POST">
+					<label>Title:</label> <br>
+					<input type="text" name="title"> <br>
+					<label>Body:</label> <br>
+					<input class="input-body" type="text" name="body"> <br>
+					<input type="submit" value="Create Post">
+				</form>		
+			</div>
+		</div>
+	</main>
+
 </body>
 </html>

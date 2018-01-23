@@ -9,15 +9,18 @@ const Post = require('../models/post.js');
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
-    res.render('home.ejs', {
-      posts:foundPosts
+    User.findOne({username:req.body.username}, (err,userFound)=>{
+      res.render('home.ejs', {
+        username: userFound,
+        posts: foundPosts,
+      });
     });
-  })
+  });
 });
 
-router.post('/', (req,res)=>{
-  res.render('home.ejs');
-});
+// router.post('/', (req,res)=>{
+//   res.render('home.ejs');
+// });
 
 //register
 router.get('/register', (req,res)=>{
@@ -48,8 +51,7 @@ router.post('/register', (req,res)=>{
   });
 });
 
-
-
+//login
 router.get('/login', (req,res)=>{
   res.render('login.ejs');
 });
@@ -76,14 +78,16 @@ router.post('/login', (req,res)=>{
   });
 });
 
-//login
-router.get('/login', (req,res)=>{
-  // res.render('login.ejs')
-});
+//new
+router.get('/new', (req , res) => {
+  res.render('new.ejs')
+})
 
-router.post('login', (req,res)=>{
-
-});
+router.post('/', (req , res) => {
+  Post.create(req.body, (err, createdArticle) => {
+    res.redirect('/home')
+  })
+})
 
 //about
 router.get('/about', (req,res)=>{

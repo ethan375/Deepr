@@ -14,7 +14,8 @@
 				</div>
 				<div class="login-pannel">
 					<a href="/home/login">Login</a> <br>
-					<a href="/home/register">Register</a>
+					<a href="/home/register">Register</a> <br>
+					<a href="/home/new">New Post</a>
 				</div>
 			</div>
 			
@@ -27,31 +28,18 @@
 	
 		</header>
 		<main>
-
+			<% for (var i = 0; i < posts.length; i++) { -%>
+				
 			<div class="post-banner">
 				<img class="post-thumbnail" src="https://i.stack.imgur.com/Zkpt2.png">
 				<img class="post-thumbnail" src="http://awarenessmysteryvalue.org/wp-content/themes/oria/images/placeholder.png">
 				<div class="post-text">
-					<h3 class="post-title">Post Title</h3>
-					<p class="post-description">This is a breif post description that serves as a little teaser</p>
+					<h3 class="post-title"><%= posts[i].title %></h3>
+					<p class="post-description"><%= posts[i].body %></p>
 				</div>
 			</div>
-			<div class="post-banner">
-				<img class="post-thumbnail" src="https://i.stack.imgur.com/Zkpt2.png">
-				<img class="post-thumbnail" src="http://awarenessmysteryvalue.org/wp-content/themes/oria/images/placeholder.png">
-			</div>
-			<div class="post-banner">
-				<img class="post-thumbnail" src="https://i.stack.imgur.com/Zkpt2.png">
-				<img class="post-thumbnail" src="http://awarenessmysteryvalue.org/wp-content/themes/oria/images/placeholder.png">
-			</div>
-			<div class="post-banner">
-				<img class="post-thumbnail" src="https://i.stack.imgur.com/Zkpt2.png">
-				<img class="post-thumbnail" src="http://awarenessmysteryvalue.org/wp-content/themes/oria/images/placeholder.png">
-			</div>
-			<div class="post-banner">
-				<img class="post-thumbnail" src="https://i.stack.imgur.com/Zkpt2.png">
-				<img class="post-thumbnail" src="http://awarenessmysteryvalue.org/wp-content/themes/oria/images/placeholder.png">
-			</div>	
+
+			<% } -%>
 
 		</main>
 	</div>
