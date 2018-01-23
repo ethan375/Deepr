@@ -18,14 +18,14 @@ body {
 
 #logo-container {
 	position: relative;
-	left: 45px;
+	left: 75px;
 	width: 300px;
 	margin: 0 auto;
 	float: center;
 }
 
 .login-pannel {
-	width: 100px;
+	width: 150px;
 	margin: 20px 0 0 0;
 }
 
@@ -61,6 +61,12 @@ body {
 	/*border: 2px solid grey;*/
 	margin: 10px 0;
 	display: flex;
+}
+
+.banner-username {
+	color: orange;
+	margin: 0 10px;
+	font-weight: bold;
 }
 
 .post-thumbnail {

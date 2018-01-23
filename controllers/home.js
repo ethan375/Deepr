@@ -10,23 +10,19 @@ const Post = require('../models/post.js');
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
-    User.findOne({username:req.body.username}, (err,userFound)=>{
-      res.render('home.ejs', {
-        username: userFound,
-        posts: foundPosts,
-      });
+    res.render('home.ejs', {
+      posts: foundPosts,
+      session: req.session,
     });
-  });
+  })
 });
-
-// router.post('/', (req,res)=>{
-//   res.render('home.ejs');
-// });
 
 //register
 router.get('/register', (req,res)=>{
   console.log(req.session)
-  res.render('register.ejs')
+  res.render('register.ejs', {
+    session: req.session,
+  })
 });
 
 router.post('/register', (req,res)=>{
@@ -54,7 +50,9 @@ router.post('/register', (req,res)=>{
 
 //login
 router.get('/login', (req,res)=>{
-  res.render('login.ejs');
+  res.render('login.ejs', {
+    session: req.session,
+  });
 });
 
 router.post('/login', (req,res)=>{
@@ -81,22 +79,22 @@ router.post('/login', (req,res)=>{
 
 //new
 router.get('/new', (req , res) => {
-  res.render('new.ejs')
+  res.render('new.ejs', {
+    session: req.session,
+  })
 })
 
 router.post('/new', (req,res)=>{
   Post.create(req.body, (err, createdPost)=>{
-    // console.log(err)
-    // console.log(req.body)
-    // console.log("This is space. above is req.body below createdPost")
-    // console.log(createdPost, ' this is empty')
     res.redirect('/home')
   })
 })
 
 //login
 router.get('/login', (req,res)=>{
-  res.render('login.ejs');
+  res.render('login.ejs', {
+    session: req.session,
+  });
 });
 
 router.post('login', (req,res)=>{
@@ -128,7 +126,7 @@ router.get('/logout', (req,res)=>{
     if(err){
       console.log(err);
     }else{
-      res.redirect('/home/login');
+      res.redirect('/home');
     };
   });
 });

@@ -7,16 +7,18 @@
 <body>
 	<div class="container">
 		<header>
+			<% if (session.logged === true) { -%>
 
 			<div class="top-banner">
 				<div id="logo-container">
-					<button id="logo" href="http://localhost:3000/home"></button>
+					<a href="/home">
+						<img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png">
+					</a>
 				</div>
 				<div class="login-pannel">
-					<a href="/home/login">Login</a> <br>
-					<a href="/home/register">Register</a> <br>
-					<a href="/home/new">New Post</a>
-					<a href="/home/logout">Logout</a>
+					<p class="banner-username">Hello, <%= session.username %></p> <br>
+					<a href="/home/new">New Post</a> <br>
+					<a href="/home/logout">Logout</a> <br>
 				</div>
 			</div>
 			
@@ -26,6 +28,27 @@
 				<button class="page-link">Cars</button>
 				<button class="page-link">Baseball</button>
 			</div>
+				
+			<% } else { -%>
+
+			<div class="top-banner">
+				<div id="logo-container">
+					<button id="logo" href="http://localhost:3000/home"></button>
+				</div>
+				<div class="login-pannel">
+					<a href="/home/login">Login</a> <br>
+					<a href="/home/register">Register</a> <br>
+				</div>
+			</div>
+			
+			<div class="page-nav">
+				<button class="page-link">Consciousness</button>
+				<button class="page-link">Sailing</button>
+				<button class="page-link">Cars</button>
+				<button class="page-link">Baseball</button>
+			</div>
+				
+			<% } -%>
 	
 		</header>
 		<main>
