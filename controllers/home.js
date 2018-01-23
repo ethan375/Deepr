@@ -5,6 +5,7 @@ const User = require('../models/user.js');
 const Post = require('../models/post.js');
 
 
+
 // ROUTES
 //home
 router.get('/', (req,res)=>{
@@ -83,9 +84,20 @@ router.get('/new', (req , res) => {
   res.render('new.ejs')
 })
 
-router.post('/', (req , res) => {
-  Post.create(req.body, (err, createdPost) => {
-    res.redirect('/home');
+router.post('/new', (req,res)=>{
+  const dbEntry = {
+    title: req.body.title,
+    body: req.body.body,
+    upvotes: null,
+    comments: null
+  }
+  console.log(req.body, ' this is req.body')
+  Post.create(dbEntry, (err, createdPost)=>{
+    console.log(err)
+    // console.log(req.body)
+    console.log("This is space. above is req.body below createdPost")
+    console.log(createdPost, ' this is empty')
+    res.redirect('/home')
   })
 })
 
