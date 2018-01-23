@@ -7,7 +7,7 @@ const commentSchema = new mongoose.Schema({
 	},
 	upvotes: Number,
 	body: String,
-})
+})    
 
 
 
