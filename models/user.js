@@ -9,9 +9,12 @@ const userSchema = new mongoose.Schema({
 		unique: true,
 	},
 	password: String,
-	upvotes: Number,
+	score: Number,
 	posts: [Post.schema],
-	comments: [Comment]
+	comments: [Comment],
+	upvotes: [],
+	downvotes: []
+
 });
 
 const User = mongoose.model('User', userSchema);
