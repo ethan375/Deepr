@@ -86,6 +86,8 @@ router.get('/new', (req , res) => {
 
 router.post('/new', (req,res)=>{
   Post.create(req.body, (err, createdPost)=>{
+    console.log(req.body)
+    console.log(req)
     // console.log(err)
     // console.log(req.body)
     // console.log("This is space. above is req.body below createdPost")
@@ -99,7 +101,7 @@ router.get('/login', (req,res)=>{
   res.render('login.ejs');
 });
 
-router.post('login', (req,res)=>{
+router.post('/login', (req,res)=>{
   //1st step is to search the database
   User.findOne({username:req.body.username}, (err, foundUser)=>{
     if(foundUser){
@@ -138,5 +140,19 @@ router.get('/logout', (req,res)=>{
 router.get('/about', (req,res)=>{
   res.render('about.ejs')
 })
+
+// // upvoting
+//   // increase/decrease score of post
+//   // udpate user's upvotes score total
+//   //also change the sprite 
+// router.get('/upvote/:id', (req,res)=>{
+//   Post.findOne({body:req.body.id}, (err, foundPost)=>{
+//     if(foundPost){
+//       if()
+//     }
+//   })
+// });
+
+
 
 module.exports = router;
