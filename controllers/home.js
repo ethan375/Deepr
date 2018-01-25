@@ -129,7 +129,7 @@ router.post('/login', (req,res)=>{
   })//end of the username search 
 });//end of our login post route
 
-
+//logout
 router.get('/logout', (req,res)=>{
   req.session.destroy((err)=>{
     if(err){
@@ -137,6 +137,16 @@ router.get('/logout', (req,res)=>{
     }else{
       res.redirect('/home');
     };
+  });
+});
+
+//show
+router.get('/:id', (req , res) => {
+  Post.findById(req.params.id, (err, foundPost) => {
+    res.render('post.ejs', {
+      post: foundPost,
+      session: req.session
+    });
   });
 });
 
