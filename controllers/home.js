@@ -15,6 +15,14 @@ router.get('/', (req,res)=>{
       posts: foundPosts,
       session: req.session
     });
+    User.findById(req.session.id, (err, foundUser) =>{
+      console.log(foundUser); 
+      res.render('home.ejs', {
+        user: foundUser,
+        posts: foundPosts,
+        session: req.session,
+      });
+    })
   })
 });
 
