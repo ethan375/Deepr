@@ -11,10 +11,6 @@ const Post = require('../models/post.js');
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
-    res.render('home.ejs', {
-      posts: foundPosts,
-      session: req.session
-    });
     User.findById(req.session.id, (err, foundUser) =>{
       console.log(foundUser); 
       res.render('home.ejs', {
@@ -106,8 +102,16 @@ router.get('/new', (req , res) => {
 })
 
 router.post('/new', (req,res)=>{
-  Post.create(req.body, (err, createdPost)=>{
-    res.redirect('/home')
+  console.log(req.session.username);
+  User.findOne({username: req.session.username}, (err, foundUser) => {
+    console.log(foundUser);
+    Post.create(req.body, (err, createdPost)=>{
+      console.log(foundUser);
+      foundUser.posts.push(createdPost);
+      foundUser.save((err, data) => {
+        res.redirect('/home')
+      })
+    })   
   })
 })
 
