@@ -147,13 +147,23 @@ router.get('/about', (req,res)=>{
 //   // increase/decrease score of post
 //   // udpate user's upvotes score total
 //   //also change the sprite 
-// router.get('/upvote/:id', (req,res)=>{
-//   Post.findOne({body:req.body.id}, (err, foundPost)=>{
-//     if(foundPost){
-//       if()
-//     }
-//   })
-// });
+router.get('/upvote/:id', (req,res)=>{
+  Post.findOne({title:req.body.title}, (err, foundPost)=>{
+    User.findOne({username:req.body.username}, (err, foundPost)=>{
+      if(err){
+        console.log(err)
+      }else{ 
+        req.body.votes += 1;
+        req.body.likes = Post.id;
+      }
+    })
+    if(err){ 
+      console.log(err)
+    }else{ 
+      req.body.votes += 1;
+    }
+  })
+});
 
 
 

@@ -3,8 +3,7 @@ const Comment = require('./comment.js')
 // console.log(Comment, ' this is comment')
 const postSchema = new mongoose.Schema({
 	username: {
-		type: String,
-		require: true,
+		name: String
 	},
 	title: String,
 	body: String,
