@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 const Post = require('../models/post.js');
+const $ = require('jquery');
+const jsdom = require('jsdom');
 
 
 
@@ -13,6 +15,7 @@ router.get('/', (req,res)=>{
     res.render('home.ejs', {
       posts: foundPosts,
       session: req.session,
+      $: $
     });
   })
 });

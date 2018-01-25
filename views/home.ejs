@@ -71,7 +71,7 @@
 
 				<%$(document).ready(()=>{
 						$('.upvote').on('click', ()=>{
-							//change the class of "upvote" so the color will change
+							$('a').toggleClass('voted')
 							$.ajax({
 								url:'/home/upvote/:id',
 								success: (result)=>{

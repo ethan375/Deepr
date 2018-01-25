@@ -3,8 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const methodOverride = require('method-override');
-const jquery = require('jquery');
-const jsdom = require('jsdom');
+const $ = require('jquery');
+
 
 
 require('./db/db.js')
