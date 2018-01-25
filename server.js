@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const methodOverride = require('method-override');
-const $ = require('jquery');
 
 
 

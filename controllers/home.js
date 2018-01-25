@@ -3,8 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 const Post = require('../models/post.js');
-const $ = require('jquery');
-const jsdom = require('jsdom');
+
 
 
 
@@ -14,13 +13,15 @@ router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
     res.render('home.ejs', {
       posts: foundPosts,
-      session: req.session,
-      $: $
+      session: req.session
     });
   })
 });
 
-//register
+
+
+
+//register routes 
 router.get('/register', (req,res)=>{
   console.log(req.session)
   res.render('register.ejs', {
@@ -51,7 +52,12 @@ router.post('/register', (req,res)=>{
   });
 });
 
-//login
+
+
+
+
+
+//login routes 
 router.get('/login', (req,res)=>{
   res.render('login.ejs', {
     session: req.session,
@@ -80,7 +86,11 @@ router.post('/login', (req,res)=>{
   });
 });
 
-//new
+
+
+
+
+//new routes 
 router.get('/new', (req , res) => {
   res.render('new.ejs', {
     session: req.session,
@@ -89,17 +99,17 @@ router.get('/new', (req , res) => {
 
 router.post('/new', (req,res)=>{
   Post.create(req.body, (err, createdPost)=>{
-    console.log(req.body)
-    console.log(req)
-    // console.log(err)
-    // console.log(req.body)
-    // console.log("This is space. above is req.body below createdPost")
-    // console.log(createdPost, ' this is empty')
     res.redirect('/home')
   })
 })
 
-//login
+
+
+
+
+
+
+//login routes
 router.get('/login', (req,res)=>{
   res.render('login.ejs', {
     session: req.session,
@@ -129,7 +139,12 @@ router.post('/login', (req,res)=>{
   })//end of the username search 
 });//end of our login post route
 
-//logout
+
+
+
+
+
+//logout route 
 router.get('/logout', (req,res)=>{
   req.session.destroy((err)=>{
     if(err){
@@ -140,7 +155,16 @@ router.get('/logout', (req,res)=>{
   });
 });
 
-//show
+
+
+
+
+
+
+
+
+
+//show route 
 router.get('/:id', (req , res) => {
   Post.findById(req.params.id, (err, foundPost) => {
     res.render('post.ejs', {
@@ -151,31 +175,33 @@ router.get('/:id', (req , res) => {
 });
 
 
+
+
+
+
+
+
+
+
 //about
 router.get('/about', (req,res)=>{
   res.render('about.ejs')
 })
 
-// // upvoting
-//   // increase/decrease score of post
-//   // udpate user's upvotes score total
-//   //also change the sprite 
-router.get('/upvote/:id', (req,res)=>{
-  Post.findOne({title:req.body.title}, (err, foundPost)=>{
-    User.findOne({username:req.body.username}, (err, foundPost)=>{
-      if(err){
-        console.log(err)
-      }else{ 
-        req.body.votes += 1;
-        req.body.likes = Post.id;
-      }
-    })
-    if(err){ 
-      console.log(err)
-    }else{ 
-      req.body.votes += 1;
-    }
-  })
+
+
+
+
+
+
+
+
+// upvoting
+router.get('/vote/:id', (req,res)=>{
+  console.log(req.body, req.params, this.id)
+  // Post.find({id:req.body.id})
+  console.log("this is the route the up button should be hitting")
+// res.send('this is working ');
 });
 
 
