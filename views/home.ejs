@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="lib/jquery.upvote.css">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
 		<header>
-			<% if (session.logged === true) { -%>
+			<% if (session.logged === true) { %>
 
 			<div class="top-banner">
 				<div id="logo-container">
@@ -54,9 +56,32 @@
 		</header>
 		<main>
 			<% for (let i = 0; i < posts.length; i++) { -%>
-				
+
+
 			<div class="post-banner">
-				<img class="post-thumbnail" src="https://i.stack.imgur.com/Zkpt2.png">
+				
+				<div class="upvote-container">
+    			<a>
+    				<img class="upvote" src="https://i.imgur.com/5zQXqHX.png"></img>
+    			</a> <br>
+    			<%=posts[i].votes%><br>
+    			<a>
+    				<img class="downvote" src="https://i.imgur.com/5zQXqHX.png"></img>
+    			</a> <br>
+				</div>
+
+				<%$(document).ready(()=>{
+						$('.upvote').on('click', ()=>{
+							//change the class of "upvote" so the color will change
+							$.ajax({
+								url:'/home/upvote/:id',
+								success: (result)=>{
+
+								}
+							})
+						})
+				})%>
+
 				<img class="post-thumbnail" src="http://awarenessmysteryvalue.org/wp-content/themes/oria/images/placeholder.png">
 				<div class="post-text">
 					<a class="post-title" href="/home/<%= posts[i].id %>"><%= posts[i].title %></a>

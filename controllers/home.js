@@ -86,6 +86,12 @@ router.get('/new', (req , res) => {
 
 router.post('/new', (req,res)=>{
   Post.create(req.body, (err, createdPost)=>{
+    console.log(req.body)
+    console.log(req)
+    // console.log(err)
+    // console.log(req.body)
+    // console.log("This is space. above is req.body below createdPost")
+    // console.log(createdPost, ' this is empty')
     res.redirect('/home')
   })
 })
@@ -97,7 +103,7 @@ router.get('/login', (req,res)=>{
   });
 });
 
-router.post('login', (req,res)=>{
+router.post('/login', (req,res)=>{
   //1st step is to search the database
   User.findOne({username:req.body.username}, (err, foundUser)=>{
     if(foundUser){
@@ -146,5 +152,29 @@ router.get('/:id', (req , res) => {
 router.get('/about', (req,res)=>{
   res.render('about.ejs')
 })
+
+// // upvoting
+//   // increase/decrease score of post
+//   // udpate user's upvotes score total
+//   //also change the sprite 
+router.get('/upvote/:id', (req,res)=>{
+  Post.findOne({title:req.body.title}, (err, foundPost)=>{
+    User.findOne({username:req.body.username}, (err, foundPost)=>{
+      if(err){
+        console.log(err)
+      }else{ 
+        req.body.votes += 1;
+        req.body.likes = Post.id;
+      }
+    })
+    if(err){ 
+      console.log(err)
+    }else{ 
+      req.body.votes += 1;
+    }
+  })
+});
+
+
 
 module.exports = router;

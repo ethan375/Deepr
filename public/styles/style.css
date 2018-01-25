@@ -59,7 +59,7 @@ html, body {
 
 .post-banner {
 	background-color: white;
-	height: 120px;
+	height: 160px;
 	width: 100%;
 	/*border: 2px solid grey;*/
 	margin: 10px 0;
@@ -102,5 +102,28 @@ html, body {
 .input-body {
 	width: 50%;
 	height: 300px;
+}
+
+.upvote-container {
+	height: 140px;
+	width: 140px;
+	text-align: center;
+	margin: 10px;
+}
+
+.upvote{
+	/*background: url('https://i.imgur.com/5zQXqHX.png');*/
+	height: 60px;
+	width: 60px;
+	background-size: cover;
+}
+
+.downvote{
+	/*background: url('https://i.imgur.com/5zQXqHX.png');*/
+	height: 60px;
+	width: 60px;
+	background-size: cover;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
