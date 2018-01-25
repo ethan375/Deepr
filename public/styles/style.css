@@ -1,9 +1,12 @@
 body {
 	background-color: white;
+	font-family: 'Mitr', sans-serif;
 }
 
 html, body {
 	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 /* Top banner */
@@ -15,6 +18,7 @@ html, body {
 	height: 120px;
 	width: 100%;
 	display: flex;
+	box-shadow: 0 0px 40px rgba(0, 0, 0, 1);
 }
 
 #logo-container {
@@ -30,6 +34,11 @@ html, body {
 	margin: 20px 0 0 0;
 }
 
+.login-pannel a {
+	text-decoration: none;
+	color: white;
+}
+
 .page-nav {
 	display: flex;
 	justify-content: space-around;
@@ -38,10 +47,11 @@ html, body {
 
 .page-link {
 	border: none;
-	background: url("https://i.imgur.com/bobL4xD.png");
+	color: white;
+	background: url("https://i.imgur.com/9skNUgf.png");
 	background-size: cover;
-	width: 160px;
-	height: 40px;
+	width: 120px;
+	height: 30px;
 	margin: 0;
 }
 
@@ -75,7 +85,6 @@ html, body {
 .post-thumbnail {
 	height: 100px;
 	margin: 10px 50px;
-
 }
 
 .post-text {
@@ -83,6 +92,12 @@ html, body {
 }
 
 /* Login */
+
+.static {
+	background: url("https://i.imgur.com/eYqRAEj.jpg");
+	background-size: cover;
+	background-position: center;
+}
 
 .login-pannel {
 	display: inline-block;

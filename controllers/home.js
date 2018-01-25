@@ -10,10 +10,14 @@ const Post = require('../models/post.js');
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
-    res.render('home.ejs', {
-      posts: foundPosts,
-      session: req.session,
-    });
+    User.findById(req.session.id, (err, foundUser) =>{
+      console.log(foundUser); 
+      res.render('home.ejs', {
+        user: foundUser,
+        posts: foundPosts,
+        session: req.session,
+      });
+    })
   })
 });
 

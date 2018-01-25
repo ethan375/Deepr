@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title><%= post.title %></title>
 	<link rel="stylesheet" type="text/css" href="/styles/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Mitr:300" rel="stylesheet">
 </head>
 <body>
-	<header>
-			<% if (session.logged === true) { -%>
+<header>
+			<% if (session.logged === true) { %>
 
 			<div class="top-banner">
 				<div id="logo-container">
 					<a href="/home">
-						<img id="logo" src="https://i.imgur.com/9jsyKaG.png">
+						<img id="logo" src="https://i.imgur.com/ELUJ2OP.png">
 					</a>
 				</div>
 				<div class="login-pannel">
@@ -33,7 +34,7 @@
 			<div class="top-banner">
 				<div id="logo-container">
 					<a href="/home">
-						<img id="logo" src="https://i.imgur.com/9jsyKaG.png">
+						<img id="logo" src="https://i.imgur.com/ELUJ2OP.png">
 					</a>
 				</div>
 				<div class="login-pannel">
@@ -41,17 +42,9 @@
 					<a href="/home/register">Register</a> <br>
 				</div>
 			</div>
-			
-			<div class="page-nav">
-				<button class="page-link">Consciousness</button>
-				<button class="page-link">Sailing</button>
-				<button class="page-link">Cars</button>
-				<button class="page-link">Baseball</button>
-			</div>
-				
 			<% } -%>
 	
-	</header>
+		</header>
 	<main>	
 		<h2><%= post.title %></h2> <br>
 		<h4><%= post.body %></h4> <br>
