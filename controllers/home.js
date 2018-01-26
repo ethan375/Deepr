@@ -26,6 +26,8 @@ router.get('/', (req,res)=>{
 });
 
 
+//blocked level route
+// res.redirect to an ejs page that lets the user know they can't access the level
 
 
 //register routes 

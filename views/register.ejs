@@ -7,15 +7,15 @@
   <link href="https://fonts.googleapis.com/css?family=Mitr:300" rel="stylesheet">
 </head>
 <body class="static">
-   <header>
+  <header>
       <% if (session.logged === true) { %>
 
       <div class="top-banner">
         <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
+            <button class="dropbtn">Levels</button>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
+              <a href="/home">level 1: Home</a>
+              <a href="/level2">level 2: Beginner</a>
             </div>
         </div>
         <div id="logo-container">
@@ -34,10 +34,10 @@
 
       <div class="top-banner">
         <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
+            <button class="dropbtn">Levels</button>
             <div class="dropdown-content">
               <a href="/home">level 1: Home</a>
-              <a href="/level2">level 2: Beginner</a>
+              <a href="#">level 2: Beginner</a>
             </div>
         </div>
         <div id="logo-container">
@@ -55,7 +55,7 @@
     </header>
   <main class="login-main">
     <div class="login-container">
-      <form action="/home/login" method="POST">
+      <form action="/home/register" method="POST">
         <br>
         <label class="username-password">Username</label> <br>
         <input class="login-input" type="text" name="username" placeholder="---   username   ---"><br>

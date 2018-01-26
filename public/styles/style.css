@@ -23,8 +23,8 @@ html, body {
 
 #logo-container {
 	position: relative;
-	right: 35px;
-	width: 300px;
+	right: 7px;
+	width: 400px;
 	margin: 0 auto;
 	float: center;
 }
@@ -53,7 +53,7 @@ html, body {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 160px;
+    width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -81,7 +81,9 @@ html, body {
 
 .login-pannel {
 	margin: 32px 32px 0 0;
+	width: 130px;
 	display: inline-block;
+	text-align: center;
 }
 
 .login-pannel a {

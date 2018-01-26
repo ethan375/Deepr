@@ -10,7 +10,10 @@ const userSchema = new mongoose.Schema({
 		unique: true,
 	},
 	password: String,
-	score: Number,
+	score: {
+		type: Number,
+		default: 0,
+	},
 	pages: [Page],
 	posts: [Post.schema],
 	comments: [Comment],
