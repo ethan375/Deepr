@@ -216,7 +216,14 @@ html, body {
 
 .new-container {
 	margin: 0 auto;
-	/*text-align: center;*/
+	margin-bottom: 50px;
+	margin-top: 50px;
+	width: 700px;
+	height: 500px;
+	background-color: rgba(0, 0, 0, .8);
+	border-radius: 40px;
+	box-shadow: 0 0 40px black;
+	text-align: center;
 }
 
 .new-inner {
@@ -242,7 +249,23 @@ html, body {
 	background-size: cover;
 }
 
+.upvote-hit{
+	/*background: url('https://i.imgur.com/5zQXqHX.png');*/
+	height: 60px;
+	width: 60px;
+	background-size: cover;
+}
+
 .downvote{
+	/*background: url('https://i.imgur.com/5zQXqHX.png');*/
+	height: 60px;
+	width: 60px;
+	background-size: cover;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.downvote-hit{
 	/*background: url('https://i.imgur.com/5zQXqHX.png');*/
 	height: 60px;
 	width: 60px;

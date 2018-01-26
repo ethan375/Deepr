@@ -1,6 +1,9 @@
 
 $(document).ready(()=>{
-  $('.up-vote').on('click', function(){
+  $('.upvote').on('click', function(){
+    console.log("button run and loggin this");
+    console.log(this);
+    $(this).attr('src', 'https://i.imgur.com/gSqfwcG.png')
     console.log("up arrow being run")
     runAjaxCall(this.id)
   })
@@ -26,6 +29,7 @@ const runAjaxCall = (id) => {
 $(document).ready(()=>{
   $('.downvote').on('click', function(){
     console.log("down arrow being run")
+    $(this).attr('src', 'https://i.imgur.com/gSqfwcG.png')
     runAjaxCall(this.id)
   })
 })
