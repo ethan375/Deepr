@@ -153,6 +153,9 @@ html, body {
 	display: inline-block;
 }
 
+.downvote {
+	margin-top: -40px;
+}
 
 /* Login */
 

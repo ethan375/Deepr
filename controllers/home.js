@@ -102,6 +102,7 @@ router.post('/login', (req,res)=>{
 //new routes 
 router.get('/new', (req , res) => {
   User.findOne({username: req.session.username}, (err, foundUser) => {
+    console.log(foundUser);
     res.render('new.ejs', {
       user: foundUser,
       session: req.session,
@@ -119,8 +120,6 @@ router.post('/new', (req,res)=>{
     });   
   });
 });
-
-
 
 
 

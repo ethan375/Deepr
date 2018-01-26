@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
 	password: String,
 	score: {
 		type: Number,
-		default: 0,
+		default: 1,
 	},
 	pages: [Page],
 	posts: [Post.schema],
