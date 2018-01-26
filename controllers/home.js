@@ -15,7 +15,12 @@ router.use('/level2', level2Controller)
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
+<<<<<<< HEAD
+    User.findById(req.session.id, (err, foundUser) =>{
+      // console.log(foundUser); 
+=======
     User.findById(req.session.id, (err, foundUser) =>{ 
+>>>>>>> df2f963d4eec1737aa61cef55eef88a3ed21d6f7
       res.render('home.ejs', {
         user: foundUser,
         posts: foundPosts,
@@ -214,12 +219,27 @@ router.get('/about', (req,res)=>{
 
 
 // upvoting
-router.get('/vote/:id', (req,res)=>{
-  console.log(req.body, req.params, this.id)
-  // Post.find({id:req.body.id})
-  console.log("this is the route the up button should be hitting")
-// res.send('this is working ');
-});
+router.post('/vote/:id', (req,res)=>{
+  console.log("this route being hit but not fully working")
+  Post.findByIdAndUpdate({id:req.params.id}, (err, foundPost)=>{
+    console.log(foundPost)
+  })
+})
+
+//downvoting
+router.post('/downvote/:id', (req,res)=>{
+  console.log("this route being hit")
+  Post.findByIdAndUpdate({id:req.params.id}, (err, foundPost)=>{
+    console.log(foundPost);
+    foundPost.save((err, savedFoundPost)=>{
+      if(err){
+        console.log(err)
+      }else{
+        console.log(savedFoundPost)
+      }
+    })
+  })
+})
 
 
 
