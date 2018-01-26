@@ -215,7 +215,7 @@ router.get('/about', (req,res)=>{
 // upvoting
 router.post('/vote/:id', (req,res)=>{
   // console.log("this route being hit")
-  Post.findByIdAndUpdate(req.params.id, (err, foundPost)=>{
+  Post.findByIdAndUpdate(req.params.id, {new:true}, (err, foundPost)=>{
     Post.votes += 1;
     foundPost.save((err, savedPost)=>{
       if (err) {
@@ -230,7 +230,7 @@ router.post('/vote/:id', (req,res)=>{
 //downvoting
 router.post('/downvote/:id', (req,res)=>{
   // console.log("this route being hit")
-  Post.findByIdAndUpdate({id:req.params.id}, (err, foundPost)=>{
+  Post.findByIdAndUpdate({id:req.params.id}, {new:true}, (err, foundPost)=>{
     // console.log(foundPost);
     Post.votes -=1
     foundPost.save((err, savedFoundPost)=>{
