@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost:27017/conversation');
+mongoose.connect(process.env.BD_HOST);
 
 mongoose.connection.on('connected', ()=>{
   console.log("Connected to the DB");
