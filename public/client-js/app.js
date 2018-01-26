@@ -37,7 +37,7 @@ const ajaxCall = (id)=>{
     method: 'POST',
     success: (votes) => {
       console.log(votes)
-      // $(div).putthenumberinthere
+       $('#diplayVotes').html(<%=posts[i].votes%>)
     }, 
     error: (err) => {
       console.log(err)
