@@ -7,10 +7,17 @@
   <link href="https://fonts.googleapis.com/css?family=Mitr:300" rel="stylesheet">
 </head>
 <body class="static">
-<header>
+   <header>
       <% if (session.logged === true) { %>
 
       <div class="top-banner">
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+            </div>
+        </div>
         <div id="logo-container">
           <a href="/home">
             <img id="logo" src="https://i.imgur.com/ELUJ2OP.png">
@@ -22,17 +29,17 @@
           <a href="/home/logout">Logout</a> <br>
         </div>
       </div>
-      
-      <div class="page-nav">
-        <button class="page-link">Consciousness</button>
-        <button class="page-link">Sailing</button>
-        <button class="page-link">Cars</button>
-        <button class="page-link">Baseball</button>
-      </div>
         
       <% } else { -%>
 
       <div class="top-banner">
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="/home">level 1: Home</a>
+              <a href="/level2">level 2: Beginner</a>
+            </div>
+        </div>
         <div id="logo-container">
           <a href="/home">
             <img id="logo" src="https://i.imgur.com/ELUJ2OP.png">
@@ -46,12 +53,18 @@
       <% } -%>
   
     </header>
-  <main>
-    <form action="/home/register" method="POST">
-      Username:<input type="text" name="username" placeholder="username"><br>
-      Password:<input type="password" name="password" placeholder="password"><br>
-      <button>Login</button>
-    </form>
+  <main class="login-main">
+    <div class="login-container">
+      <form action="/home/login" method="POST">
+        <br>
+        <label class="username-password">Username</label> <br>
+        <input class="login-input" type="text" name="username" placeholder="---   username   ---"><br>
+        <br>
+        <label class="username-password">Password</label> <br>
+        <input class="login-input" type="password" name="password" placeholder="---   password   ---"><br>
+        <button class="submit">Register</button> 
+      </form>     
+    </div>
   </main>
 
 </body>

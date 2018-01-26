@@ -6,18 +6,21 @@ const Post = require('../models/post.js');
 
 
 
+// CONTROLERS
+//level2(beginner)
+const level2Controller = require('./level2.js')
+router.use('/level2', level2Controller)
 
 // ROUTES
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
-    User.findById(req.session.id, (err, foundUser) =>{
-      console.log(foundUser); 
+    User.findById(req.session.id, (err, foundUser) =>{ 
       res.render('home.ejs', {
         user: foundUser,
         posts: foundPosts,
         session: req.session,
-      });
+      })
     })
   })
 });
@@ -96,24 +99,24 @@ router.post('/login', (req,res)=>{
 
 //new routes 
 router.get('/new', (req , res) => {
-  res.render('new.ejs', {
-    session: req.session,
+  User.findOne({username: req.session.username}, (err, foundUser) => {
+    res.render('new.ejs', {
+      user: foundUser,
+      session: req.session,
+    })
   })
-})
+});
 
 router.post('/new', (req,res)=>{
-  console.log(req.session.username);
   User.findOne({username: req.session.username}, (err, foundUser) => {
-    console.log(foundUser);
-    Post.create(req.body, (err, createdPost)=>{
-      console.log(foundUser);
-      foundUser.posts.push(createdPost);
+    Post.create(req.body, (error, createdPost)=>{
+      foundUser.posts.push(createdPost)
       foundUser.save((err, data) => {
         res.redirect('/home')
-      })
-    })   
-  })
-})
+      });
+    });   
+  });
+});
 
 
 
