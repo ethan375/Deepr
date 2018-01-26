@@ -15,6 +15,7 @@ router.use('/level2', level2Controller)
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
+    console.log(foundPosts);
     User.findById(req.session.id, (err, foundUser) =>{ 
       res.render('home.ejs', {
         user: foundUser,
