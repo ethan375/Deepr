@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
 	title: String,
 	body: String,
 	votes: Number,
-	comments: [Comment]
+	// comments: [Comment]
 })
 
 const Post = mongoose.model('Post', postSchema);

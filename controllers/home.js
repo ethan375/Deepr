@@ -11,12 +11,8 @@ const Post = require('../models/post.js');
 //home
 router.get('/', (req,res)=>{
   Post.find({}, (err, foundPosts)=>{
-    res.render('home.ejs', {
-      posts: foundPosts,
-      session: req.session
-    });
     User.findById(req.session.id, (err, foundUser) =>{
-      console.log(foundUser); 
+      // console.log(foundUser); 
       res.render('home.ejs', {
         user: foundUser,
         posts: foundPosts,
@@ -205,12 +201,27 @@ router.get('/about', (req,res)=>{
 
 
 // upvoting
-router.get('/vote/:id', (req,res)=>{
-  console.log(req.body, req.params, this.id)
-  // Post.find({id:req.body.id})
-  console.log("this is the route the up button should be hitting")
-// res.send('this is working ');
-});
+router.post('/vote/:id', (req,res)=>{
+  console.log("this route being hit but not fully working")
+  Post.findByIdAndUpdate({id:req.params.id}, (err, foundPost)=>{
+    console.log(foundPost)
+  })
+})
+
+//downvoting
+router.post('/downvote/:id', (req,res)=>{
+  console.log("this route being hit")
+  Post.findByIdAndUpdate({id:req.params.id}, (err, foundPost)=>{
+    console.log(foundPost);
+    foundPost.save((err, savedFoundPost)=>{
+      if(err){
+        console.log(err)
+      }else{
+        console.log(savedFoundPost)
+      }
+    })
+  })
+})
 
 
 
