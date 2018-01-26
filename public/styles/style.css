@@ -23,19 +23,73 @@ html, body {
 
 #logo-container {
 	position: relative;
-	left: 75px;
+	right: 35px;
 	width: 300px;
 	margin: 0 auto;
 	float: center;
 }
 
+/* dropdown menu */
+
+.dropbtn {
+    background-color: #8F41FF;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Mitr', sans-serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 38px 32px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #672FB8;
+}
+
+/* login navigation*/
+
 .login-pannel {
-	width: 150px;
-	margin: 20px 0 0 0;
+	margin: 32px 32px 0 0;
+	display: inline-block;
 }
 
 .login-pannel a {
 	text-decoration: none;
+	color: #8F41FF;
+}
+
+.login-pannel a:hover {
 	color: white;
 }
 
@@ -67,6 +121,11 @@ html, body {
 
 /* Posts */
 
+.popular-posts {
+	text-align: center;
+	color: #8F41FF;
+}
+
 .post-banner {
 	background-color: white;
 	height: 160px;
@@ -74,6 +133,7 @@ html, body {
 	/*border: 2px solid grey;*/
 	margin: 10px 0;
 	display: flex;
+	box-shadow: 0 0 5px black;
 }
 
 .banner-username {
@@ -91,6 +151,7 @@ html, body {
 	display: inline-block;
 }
 
+
 /* Login */
 
 .static {
@@ -99,9 +160,52 @@ html, body {
 	background-position: center;
 }
 
-.login-pannel {
+.login-container {
 	display: inline-block;
+	text-align: center;
+	width: 400px;
+	height: 247.2px;
+	margin: 0 auto;
+	margin-top: 150px;
+	margin-bottom: 50px;
+	background-color: rgba(0, 0, 0, .8);
+	border-radius: 40px;
+	box-shadow: 0 0 40px black;
 }
+
+.login-main {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.username-password {
+	font-weight: bold;
+	font-size: 14pt;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.login-input {
+	border-radius: 5px;
+	width: 200px;
+	height: 25px;
+	border: none;
+	text-align: center;
+}
+
+.submit {
+	background-color: #8F41FF;
+	color: white;
+	width: 100px;
+	height: 30px;
+	font-weight: bolder;
+	font-size: 12pt;
+	border: none;
+	border-radius: 5px;
+	margin: 30px;
+	font-family: 'Mitr', sans-serif;
+}
+
 
 /* New */
 

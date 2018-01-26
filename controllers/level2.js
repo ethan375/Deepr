@@ -5,7 +5,7 @@ const Page = require('../models/page.js');
 
 
 router.get('/', (req,res)=>{
-  
+  res.render('level2.ejs')
 });
 
 

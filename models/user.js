@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Post = require('./post.js'); 
-const Comment = require('./comment.js')
+const Comment = require('./comment.js');
+const Page= require('./page.js');
 
 const userSchema = new mongoose.Schema({
 	
@@ -10,6 +11,7 @@ const userSchema = new mongoose.Schema({
 	},
 	password: String,
 	score: Number,
+	pages: [Page],
 	posts: [Post.schema],
 	comments: [Comment],
 	upvotes: [],

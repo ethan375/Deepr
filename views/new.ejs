@@ -48,10 +48,18 @@
 		<div class="new-container">
 			<h1>Create New Post</h1>
 			<form action="/home/new" method="POST">
+				<label>Page:</label> <br>
+				<select name="Page">
+					<% for (var i = 0; i < user.page.length; i++) { -%>
+						<option value="<%= authors[i].id%>"><%= user.page[i].title %></option>
+					<% } -%>
+				</select> <br>
 				<label>Title:</label> <br>
 				<input type="text" name="title"> <br>
 				<label>Body:</label> <br>
 				<input class="input-body" type="text" name="body"> <br>
+				<label>Username:</label>
+				<input type="text" name="username" value="<%= session.username %>" readonly> <br>
 				<input type="submit" value="Create Post">
 			</form>		
 		</div>
