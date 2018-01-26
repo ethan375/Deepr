@@ -18,7 +18,6 @@ router.get('/', (req,res)=>{
 
     User.findById(req.session.id, (err, foundUser) =>{
       // console.log(foundUser); 
-    User.findById(req.session.id, (err, foundUser) =>{ 
       res.render('home.ejs', {
         user: foundUser,
         posts: foundPosts,
@@ -219,7 +218,7 @@ router.get('/about', (req,res)=>{
 // upvoting
 router.post('/vote/:id', (req,res)=>{
   console.log("this route being hit but not fully working")
-  Post.findByIdAndUpdate({id:req.params.id}, (err, foundPost)=>{
+  Post.findByIdAndUpdate(req.params.id, (err, foundPost)=>{
     console.log(foundPost)
   })
 })
