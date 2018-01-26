@@ -16,7 +16,7 @@ const runAjaxCall = (id) => {
     method: 'POST',
     success: (votes) => {
       console.log(votes)
-      $('#diplayVotes').html(<%=posts[i].votes%>)
+      $('#displayVotes').html('<%=posts[i].votes%>')
     }, 
     error: (err) => {
       console.log(err)
@@ -41,7 +41,7 @@ const ajaxCall = (id)=>{
     method: 'POST',
     success: (votes) => {
       console.log(votes)
-       $('#diplayVotes').html(<%=posts[i].votes%>)
+       $('#diplayVotes').html('<%=posts[i].votes%>')
     }, 
     error: (err) => {
       console.log(err)

@@ -146,11 +146,19 @@ html, body {
 
 .post-thumbnail {
 	height: 100px;
-	margin: 10px 50px;
+	margin: 30px 50px;
+}
+
+.post-title {
+	text-decoration: none;
+	color: #8F41FF;
+	font-size: 14pt;
+	font-weight: bold;
 }
 
 .post-text {
 	display: inline-block;
+	margin-top: 30px;
 }
 
 .downvote {
@@ -232,8 +240,32 @@ html, body {
 
 .input-body {
 	width: 50%;
-	height: 300px;
+	height: 200px;
 }
+
+.input-title {
+	width: 50%;
+}
+
+.create-title {
+	color: white;
+}
+
+.submit-post {
+	background-color: #8F41FF;
+	color: white;
+	width: 150px;
+	height: 30px;
+	font-weight: bolder;
+	font-size: 12pt;
+	border: none;
+	border-radius: 5px;
+	margin: 30px;
+	font-family: 'Mitr', sans-serif;
+}
+
+
+/* Vote */
 
 .upvote-container {
 	height: 140px;
@@ -265,12 +297,5 @@ html, body {
 	transform: rotate(180deg);
 }
 
-.downvote-hit{
-	/*background: url('https://i.imgur.com/5zQXqHX.png');*/
-	height: 60px;
-	width: 60px;
-	background-size: cover;
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
-}
+
 

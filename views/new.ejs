@@ -53,15 +53,15 @@
 		</header>
 	<main>
 		<div class="new-container">
-			<h1>Create New Post</h1>
+			<h1 class="create-title">Create New Post</h1>
 			<form action="/home/new" method="POST">
-				<label>Title:</label> <br>
-				<input type="text" name="title"> <br>
-				<label>Body:</label> <br>
+				<label class="username-password">Title:</label> <br>
+				<input class="input-title" type="text" name="title"> <br>
+				<label class="username-password">Body:</label> <br>
 				<input class="input-body" type="text" name="body"> <br>
-				<label>Username:</label>
+				<label class="username-password">Username:</label> <br>
 				<input type="text" name="username" value="<%= session.username %>" readonly> <br>
-				<input type="submit" value="Create Post">
+				<input class="submit-post" type="submit" value="Create Post">
 			</form>		
 		</div>
 	</main>
