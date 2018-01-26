@@ -3,7 +3,11 @@ const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const methodOverride = require('method-override');
+<<<<<<< HEAD
 const port = process.env.PORT;
+=======
+const port = process.env.PORT
+>>>>>>> ba23e886ee279f36fdf979628ebf7c57314ff2c4
 
 
 require('dotenv').config()
@@ -39,6 +43,6 @@ app.get('*', (req,res)=>{
 
 
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
   console.log("Server is listening on port 3000")
 })
