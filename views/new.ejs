@@ -10,6 +10,13 @@
 			<% if (session.logged === true) { %>
 
 			<div class="top-banner">
+				<div class="dropdown">
+  					<button class="dropbtn">Levels</button>
+  					<div class="dropdown-content">
+  					  <a href="/home">level 1: Home</a>
+  					  <a href="/level2">level 2: Beginner</a>
+  					</div>
+				</div>
 				<div id="logo-container">
 					<a href="/home">
 						<img id="logo" src="https://i.imgur.com/ELUJ2OP.png">
@@ -17,20 +24,21 @@
 				</div>
 				<div class="login-pannel">
 					<p class="banner-username">Hello, <%= session.username %></p> <br>
+					<a href="/home/new">New Post</a> <br>
 					<a href="/home/logout">Logout</a> <br>
 				</div>
-			</div>
-			
-			<div class="page-nav">
-				<button class="page-link">Consciousness</button>
-				<button class="page-link">Sailing</button>
-				<button class="page-link">Cars</button>
-				<button class="page-link">Baseball</button>
 			</div>
 				
 			<% } else { -%>
 
 			<div class="top-banner">
+				<div class="dropdown">
+  					<button class="dropbtn">Levels</button>
+  					<div class="dropdown-content">
+  					  <a href="/home">level 1: Home</a>
+  					  <a href="#">level 2: Beginner</a>
+  					</div>
+				</div>
 				<div id="logo-container">
 					<a href="/home">
 						<img id="logo" src="https://i.imgur.com/ELUJ2OP.png">

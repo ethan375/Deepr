@@ -18,6 +18,7 @@ router.get('/', (req,res)=>{
 
     User.findById(req.session.id, (err, foundUser) =>{
       // console.log(foundUser); 
+    User.findById(req.session.id, (err, foundUser) =>{ 
       res.render('home.ejs', {
         user: foundUser,
         posts: foundPosts,
@@ -28,6 +29,8 @@ router.get('/', (req,res)=>{
 });
 
 
+//blocked level route
+// res.redirect to an ejs page that lets the user know they can't access the level
 
 
 //register routes 
